@@ -61,6 +61,8 @@ Describe the process of using the solution. In what kind situations is the solut
 Python
 from sklearn.ensemble import RandomForestClassifier
 
+from sklearn.ensemble import RandomForestClassifier
+
 # Sample Data: [Age, BMI, HbA1c, Systolic BP, Exercise_Hours_Weekly]
 X = [[45, 28.5, 5.7, 130, 2], [60, 32.1, 6.4, 145, 0.5], [25, 22.0, 4.8, 115, 5]]
 # Labels: [0 = Low Risk, 1 = High Risk]
@@ -73,6 +75,9 @@ model.fit(X, y)
 # Predict risk for a new patient
 new_patient = [[55, 30.2, 6.1, 140, 1]]
 risk_prediction = model.predict_proba(new_patient)
+
+print(f"Calculated Risk of Chronic Disease: {risk_prediction[0][1] * 100}%")
+
 
 print(f"Calculated Risk of Chronic Disease: {risk_prediction[0][1] * 100}%")
 
